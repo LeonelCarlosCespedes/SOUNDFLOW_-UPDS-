@@ -18,7 +18,7 @@ SoundFlow es un reproductor multimedia que permite reproducir archivos de audio 
 
 - Carlos Leonel Céspedes
 - Sebastián Sejas U.
-- Michael
+- luis oscar miranda maldonado
 
 ## 📁 Estructura del proyecto
 
