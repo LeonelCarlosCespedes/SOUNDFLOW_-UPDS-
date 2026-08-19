@@ -1,22 +1,23 @@
 NOMBRE DE LA PLATAFORMA: SOUNDFLOW
+REFERENCIAS
 https://music.youtube.com/
 
 https://open.spotify.com/intl-es/
 https://www.deezer.com/mx/
 
-1. PÁGINA DE INICIO
+2ORGANIZAR
 ¿Qué elementos muestra primero?
 LOS ELEMENTO QUE POR AHOR MUESTRA SON HOME COMO ES INICIO DEL SITIO WEB, LA BARRA DE BUSCAR PARA BUSCAR CANCIONES, LABIBLIOTECA.
 ¿Hay banners destacados?
 SE AÑADIRAN BANERS COMO REFERECCIA A QUE ES UN REPRODUCTOR DE MUSICA
 
-.2 BÚSQUEDA
+2.1 BÚSQUEDA
 ¿Dónde está ubicado el buscador?
 EL BUSCADOR ESTA UBICANDO EN LA PARTE IZQUIERDA DE LA PANTALLA SUPERIOR
 ¿Filtra por: canciones, artistas, álbumes, playlists?
 LAS CANCIONES SE FILTRARAN POR CANCIONES O TIPO DE GENRO
 
-3:REPRODUCTOR
+2,2 REPRODUCTOR
 Controles que tiene:
 Play/Pause
 Anterior/Siguiente
@@ -24,3 +25,19 @@ Barra de progreso
 Volumen
 Repeat (repetir)
 
+INVESTIGAR Y OBSERVAR
+3.1: Colores
+Fondo: Negro/Gris oscuro (#121212, #1E1E1E)
+Primario: Color vibrante (Verde Spotify, Rojo YouTube)
+Texto: Blanco/Gris claro
+Secundario: Grises para elementos menos importantes
+3.2: Tarjetas
+Imagen cuadrada (aspect-ratio: 1/1)
+Título en negrita
+Subtítulo (artista/álbum) en gris
+
+PROPUESTA PARA SOUNDFLOW
+¿Qué hará único a SoundFlow?
+Enfoque en música local o streaming
+Público objetivo
+Diferenciación de la competencia
