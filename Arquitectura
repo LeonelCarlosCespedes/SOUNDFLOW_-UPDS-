@@ -1,0 +1,27 @@
+Arquitectura – SoundFlow
+
+• Propósito del sitio
+SoundFlow es una aplicación web gratuita que permite reproducir canciones y videos musicales sin necesidad de registro. Su objetivo es ofrecer una experiencia de streaming ligera y accesible, con buscador integrado, reproductor interactivo y la posibilidad de organizar playlists personalizadas.
+• Estructura general
+La aplicación estará organizada en seis secciones principales:1. Inicio
+2. Biblioteca de música
+3. Videos musicales
+4. Buscador
+5. Reproductor
+6. Playlists
+
+• Distribución de pantallas• Inicio: Presenta recomendaciones de canciones y videos destacados, accesos rápidos al buscador y reproductor.
+• Biblioteca de música: Lista completa de canciones organizadas por género, artista y álbum, con opción de reproducir directamente.
+• Videos musicales: Galería de clips musicales con miniaturas, opción de pantalla completa y controles básicos de reproducción.
+• Buscador: Barra de búsqueda en el encabezado que permite localizar canciones o videos por título, artista o género.
+• Reproductor: Pantalla central con controles de reproducción (play, pausa, siguiente, anterior), barra de progreso, control de volumen, portada del álbum o miniatura del video, y botones de añadir a playlist.
+• Playlists: Sección para crear, editar y reproducir listas personalizadas. Los usuarios podrán añadir canciones o videos a sus playlists, ordenarlas manualmente y reproducirlas en orden o aleatoriamente.
+
+• Jerarquía visual
+Cada pantalla contará con:• Encabezado fijo: Logo de SoundFlow, menú de navegación y buscador.
+• Cuerpo central: Contenido principal (lista de canciones, videos, reproductor o playlists).
+• Pie de página: Créditos, enlaces rápidos y derechos reservados.
+
+• Flujo de interacción
+El usuario puede iniciar en la pantalla de Inicio, usar el buscador para encontrar canciones o videos,
+reproducirlos en el reproductor, y añadirlos a playlists personalizadas. El reproductor estará disponible en todo momento como barra inferior fija para mantener la continuidad de la reproducción mientras navega por otras secciones.

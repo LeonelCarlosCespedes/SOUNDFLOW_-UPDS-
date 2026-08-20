@@ -1,0 +1,106 @@
+NOMBRE DE LA PLATAFORMA: SOUNDFLOW
+REFERENCIAS
+https://music.youtube.com/
+
+https://open.spotify.com/intl-es/
+https://www.deezer.com/mx/
+
+2ORGANIZAR
+¿Qué elementos muestra primero?
+LOS ELEMENTO QUE POR AHOR MUESTRA SON HOME COMO ES INICIO DEL SITIO WEB, LA BARRA DE BUSCAR PARA BUSCAR CANCIONES, LABIBLIOTECA.
+¿Hay banners destacados?
+SE AÑADIRAN BANERS COMO REFERECCIA A QUE ES UN REPRODUCTOR DE MUSICA
+
+2.1 BÚSQUEDA
+¿Dónde está ubicado el buscador?
+EL BUSCADOR ESTA UBICANDO EN LA PARTE IZQUIERDA DE LA PANTALLA SUPERIOR
+¿Filtra por: canciones, artistas, álbumes, playlists?
+LAS CANCIONES SE FILTRARAN POR CANCIONES O TIPO DE GENRO
+
+2,2 REPRODUCTOR
+Controles que tiene:
+Play/Pause
+Anterior/Siguiente
+Barra de progreso
+Volumen
+Repeat (repetir)
+
+INVESTIGAR Y OBSERVAR
+3.1: Colores
+Fondo: Negro/Gris oscuro (#121212, #1E1E1E)
+Primario: Color vibrante (Verde Spotify, Rojo YouTube)
+Texto: Blanco/Gris claro
+Secundario: Grises para elementos menos importantes
+3.2: Tarjetas
+Imagen cuadrada (aspect-ratio: 1/1)
+Título en negrita
+Subtítulo (artista/álbum) en gris
+
+PROPUESTA PARA SOUNDFLOW
+¿Qué hará único a SoundFlow?
+Enfoque en música local o streaming
+Público objetivo
+Diferenciación de la competencia
+
+ARQUITECTURA
+
+• Estructura general
+La aplicación estará organizada en seis secciones principales:1. Inicio
+2. Biblioteca de música
+3. Videos musicales
+4. Buscador
+5. Reproductor
+6. Playlists
+
+• Distribución de pantallas• Inicio: Presenta recomendaciones de canciones y videos destacados, accesos rápidos al buscador y reproductor.
+• Biblioteca de música: Lista completa de canciones organizadas por género, artista y álbum, con opción de reproducir directamente.
+• Videos musicales: Galería de clips musicales con miniaturas, opción de pantalla completa y controles básicos de reproducción.
+• Buscador: Barra de búsqueda en el encabezado que permite localizar canciones o videos por título, artista o género.
+• Reproductor: Pantalla central con controles de reproducción (play, pausa, siguiente, anterior), barra de progreso, control de volumen,
+portada del álbum o miniatura del video, y botones de añadir a playlist.
+• Playlists: Sección para crear, editar y reproducir listas personalizadas. Los usuarios podrán añadir canciones o videos a sus playlists,
+ordenarlas manualmente y reproducirlas en orden o aleatoriamente.
+
+HOME → Click en tarjeta de playlist
+       ↓
+LISTADO DE PLAYLISTS 
+       ↓
+Click en tarjeta específica
+       ↓
+DETALLE DE PLAYLIST
+  • Portada grande
+  • Título + descripción
+  • Botón Play / saltar/regresar / Favorito
+  • Lista de canciones con duración
+  • Información del creador
+• Flujo de interacción
+
+MAPA DE NAVEGACION
+┌─────────────────────────────────────────┐
+│              SOUNDFLOW                   │
+└─────────────────────────────────────────┘
+                    │
+        ───────────┼───────────┐
+        ▼           ▼           ▼
+    [HOME]     [SEARCH]    [PLAYLISTS]
+        │           │           │
+        ▼           ▼           ▼
+  ┌─────┴─────┐  Resultados  Lista completa
+  │           │     │              │
+  ▼           ▼     ▼              ▼
+Featured  Recently  Detalle     Detalle
+Playlist  Played    Canción     Playlist
+  │           │     │              │
+  ▼           ▼     ▼              ▼
+Detalle   Reproducir  Player     Lista
+Playlist            (persistente) canciones
+                        │
+                        ▼
+                  Controles: Play/Pause
+                  Next/Prev, Volume,
+                  Progress bar
+
+
+
+
+
