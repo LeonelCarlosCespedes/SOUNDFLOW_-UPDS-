@@ -41,3 +41,66 @@ PROPUESTA PARA SOUNDFLOW
 Enfoque en música local o streaming
 Público objetivo
 Diferenciación de la competencia
+
+ARQUITECTURA
+
+• Estructura general
+La aplicación estará organizada en seis secciones principales:1. Inicio
+2. Biblioteca de música
+3. Videos musicales
+4. Buscador
+5. Reproductor
+6. Playlists
+
+• Distribución de pantallas• Inicio: Presenta recomendaciones de canciones y videos destacados, accesos rápidos al buscador y reproductor.
+• Biblioteca de música: Lista completa de canciones organizadas por género, artista y álbum, con opción de reproducir directamente.
+• Videos musicales: Galería de clips musicales con miniaturas, opción de pantalla completa y controles básicos de reproducción.
+• Buscador: Barra de búsqueda en el encabezado que permite localizar canciones o videos por título, artista o género.
+• Reproductor: Pantalla central con controles de reproducción (play, pausa, siguiente, anterior), barra de progreso, control de volumen,
+portada del álbum o miniatura del video, y botones de añadir a playlist.
+• Playlists: Sección para crear, editar y reproducir listas personalizadas. Los usuarios podrán añadir canciones o videos a sus playlists,
+ordenarlas manualmente y reproducirlas en orden o aleatoriamente.
+
+HOME → Click en tarjeta de playlist
+       ↓
+LISTADO DE PLAYLISTS 
+       ↓
+Click en tarjeta específica
+       ↓
+DETALLE DE PLAYLIST
+  • Portada grande
+  • Título + descripción
+  • Botón Play / saltar/regresar / Favorito
+  • Lista de canciones con duración
+  • Información del creador
+• Flujo de interacción
+
+MAPA DE NAVEGACION
+┌─────────────────────────────────────────┐
+│              SOUNDFLOW                   │
+└─────────────────────────────────────────┘
+                    │
+        ───────────┼───────────┐
+        ▼           ▼           ▼
+    [HOME]     [SEARCH]    [PLAYLISTS]
+        │           │           │
+        ▼           ▼           ▼
+  ┌─────┴─────┐  Resultados  Lista completa
+  │           │     │              │
+  ▼           ▼     ▼              ▼
+Featured  Recently  Detalle     Detalle
+Playlist  Played    Canción     Playlist
+  │           │     │              │
+  ▼           ▼     ▼              ▼
+Detalle   Reproducir  Player     Lista
+Playlist            (persistente) canciones
+                        │
+                        ▼
+                  Controles: Play/Pause
+                  Next/Prev, Volume,
+                  Progress bar
+
+
+
+
+
