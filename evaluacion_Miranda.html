@@ -1,0 +1,379 @@
+<!DOCTYPE html> 
+<html lang="es"> 
+<head> 
+    <meta charset="UTF-8"> 
+    <title>Evaluación JavaScript</title> 
+</head> 
+<body> 
+    <h1>Evaluación de Contenido Avanzado</h1> 
+    <p>Revisa el resultado en la consola del navegador.</p> 
+    <script> 
+        const productos = [ 
+            { id: 1, nombre: "Hamburguesa", precio: 28, stock: 8 }, 
+            { id: 2, nombre: "Pizza personal", precio: 32, stock: 6 }, 
+            { id: 3, nombre: "Ensalada", precio: 24, stock: 7 }, 
+            { id: 4, nombre: "Refresco", precio: 10, stock: 15 }, 
+            { id: 5, nombre: "Cafe", precio: 12, stock: 12 } 
+        ]; 
+        const pedidos = [ 
+            { 
+                id: 101, 
+                cliente: "Ana", 
+                tipoCliente: "regular", 
+                zona: "A", 
+                items: [ 
+                    { productoId: 1, cantidad: 2 }, 
+                    { productoId: 4, cantidad: 2 } 
+                ] 
+            }, 
+            { 
+                id: 102, 
+                cliente: "Bruno", 
+                tipoCliente: "estudiante", 
+                zona: "B", 
+                items: [ 
+                    { productoId: 2, cantidad: 1 }, 
+                    { productoId: 5, cantidad: 1 } 
+                ] 
+            }, 
+            { 
+                id: 103, 
+                cliente: "Carla", 
+                tipoCliente: "frecuente", 
+                zona: "C", 
+                items: [ 
+                    { productoId: 3, cantidad: 2 }, 
+                    { productoId: 4, cantidad: 1 }, 
+                    { productoId: 5, cantidad: 1 } 
+                ] 
+            }, 
+            { 
+                id: 104, 
+                cliente: "Diego", 
+                tipoCliente: "regular", 
+                zona: "A", 
+                items: [ 
+                    { productoId: 1, cantidad: 1 }, 
+                    { productoId: 2, cantidad: 2 } 
+                ] 
+            }, 
+            { 
+                id: 105, 
+                cliente: "Elena", 
+                tipoCliente: "estudiante", 
+                zona: "B", 
+                items: [ 
+                    { productoId: 3, cantidad: 1 }, 
+                    { productoId: 4, cantidad: 3 } 
+                ] 
+            }, 
+            { 
+                id: 106, 
+                cliente: "Fabian", 
+                tipoCliente: "frecuente", 
+                zona: "C", 
+                items: [ 
+                    { productoId: 1, cantidad: 3 }, 
+                    { productoId: 5, cantidad: 2 } 
+                ] 
+            } 
+        ]; 
+    
+    <!-- EL ESTUDIANTE TRABAJA AQUÍ --> 
+ 
+
+ function buscarProducto(id) {
+            const producto = productos.find(function(producto) {
+                return producto.id === id;
+            });
+
+            if (producto === undefined) {
+                return null;
+            }
+            return producto;
+        }
+
+ function calcularSubtotal(pedido) {
+
+            let subtotal = 0;
+
+            pedido.items.forEach(function(item) {
+
+                const producto = buscarProducto(item.productoId);
+
+                if (producto !== null) {
+                    subtotal += producto.precio * item.cantidad;
+                }
+            });
+
+            return subtotal;
+        }
+        function calcularDescuento(pedido, subtotal) {
+
+            let porcentaje = 0;
+
+            if (pedido.tipoCliente === "estudiante") {
+                porcentaje = 10;
+            } 
+            else if (pedido.tipoCliente === "frecuente") {
+                porcentaje = 7;
+            } 
+            else {
+                porcentaje = 0;
+            }
+
+            if (subtotal >= 120) {
+                porcentaje += 3;
+            }
+
+            if (porcentaje > 15) {
+                porcentaje = 15;
+            }
+
+            const montoDescuento = subtotal * porcentaje / 100;
+
+            const total = subtotal - montoDescuento;
+
+            return {
+                porcentaje: porcentaje,
+                monto: montoDescuento,
+                total: total
+            };
+        } 
+
+        function calcularEnvio(pedido, totalAntesEnvio) {
+            
+            if (totalAntesEnvio>=12){
+                return 0;
+            }
+            if (pedido.zona === "A") {
+                return 5;
+            }
+
+            if (pedido.zona === "B") {
+                return 8;
+            }
+
+            if (pedido.zona === "C") {
+                return 12;
+            }
+
+            return 0;
+
+        }
+        
+        function calcularPuntos(totalFinal) {
+            return Math.floor(totalFinal / 10);
+        }
+
+        function calcularNivel(puntos) {
+
+            if (puntos >= 30) {
+                return "Oro";
+            } 
+            else if (puntos >= 20) {
+                return "Plata";
+            } 
+            else {
+                return "Bronce";
+            }
+
+        }
+        class ResumenCliente {
+
+            constructor(nombre) {
+                this.nombre = nombre;
+                this.cantidadPedidos = 0;
+                this.totalGastado = 0;
+                this.puntos = 0;
+            }
+
+            agregarPedido(total, puntos) {
+                this.cantidadPedidos++;
+                this.totalGastado += total;
+                this.puntos += puntos;
+            }
+
+        }
+        const resumenClientes = {};
+
+        let totalVendido = 0;
+        let totalEnvios = 0;
+        let totalGeneral = 0;
+
+     
+        pedidos.forEach(function(pedido) {
+
+            const subtotal = calcularSubtotal(pedido);
+
+            const descuento = calcularDescuento(pedido, subtotal);
+
+            const totalAntesEnvio = descuento.total;
+
+            const envio = calcularEnvio(pedido, totalAntesEnvio);
+
+            const totalPagar = totalAntesEnvio + envio;
+
+            const puntos = calcularPuntos(totalAntesEnvio);
+
+            const nivel = calcularNivel(puntos);
+
+            totalVendido += totalAntesEnvio;
+
+            totalEnvios += envio;
+
+            totalGeneral += totalPagar;
+
+            if (resumenClientes[pedido.cliente] === undefined) {
+
+                resumenClientes[pedido.cliente] =
+                    new ResumenCliente(pedido.cliente);
+
+            }
+ 
+            resumenClientes[pedido.cliente].agregarPedido(
+                totalAntesEnvio,
+                puntos
+            );
+
+
+            console.log(
+                "Pedido " + pedido.id + " – " + pedido.cliente
+            );
+
+            console.log(
+                "Subtotal: Bs " + subtotal.toFixed(2)
+            );
+
+            console.log(
+                "Descuento: " +
+                descuento.porcentaje +
+                "% = Bs " +
+                descuento.monto.toFixed(2)
+            );
+
+            console.log(
+                "Total: Bs " + totalAntesEnvio.toFixed(2)
+            );
+
+            console.log(
+                "Envío zona " +
+                pedido.zona +
+                ": Bs " +
+                envio.toFixed(2)
+            );
+
+            console.log(
+                "A pagar: Bs " +
+                totalPagar.toFixed(2) +
+                " Puntos: " +
+                puntos
+            );
+
+            console.log(
+                "Nivel: " + nivel
+            );
+
+        });
+
+
+        console.log("TOTALES GENERALES");
+
+        console.log(
+            "Ventas antes del envío: Bs " +
+            totalVendido.toFixed(2)
+        );
+
+        console.log(
+            "Recaudación por envíos: Bs " +
+            totalEnvios.toFixed(2)
+        );
+
+        console.log(
+            "Total General: Bs " +
+            totalGeneral.toFixed(2)
+        );
+
+
+       
+
+        console.log("REPORTE POR CLIENTE");
+
+
+        Object.values(resumenClientes).forEach(function(cliente) {
+
+     
+
+            console.log(
+                "Cliente – " + cliente.nombre
+            );
+
+            console.log(
+                "Pedidos: " +
+                cliente.cantidadPedidos +
+                " Nivel: " +
+                calcularNivel(cliente.puntos)
+            );
+
+            console.log(
+                "Gastado: Bs " +
+                cliente.totalGastado.toFixed(2) +
+                " Puntos: " +
+                cliente.puntos
+            );
+
+        });
+
+    
+        console.log("PRUEBAS");
+
+
+        console.log(
+            "buscarProducto(3):",
+            buscarProducto(3)
+        );
+
+
+        console.log(
+            "buscarProducto(99):",
+            buscarProducto(99)
+        );
+
+
+        const pedido106 = pedidos.find(function(pedido) {
+            return pedido.id === 106;
+        });
+
+
+        const subtotal106 = calcularSubtotal(pedido106);
+
+        const descuento106 =
+            calcularDescuento(pedido106, subtotal106);
+
+
+        console.log(
+            "Pedido 106 subtotal:",
+            subtotal106
+        );
+
+
+        console.log(
+            "Pedido 106 descuento:",
+            descuento106.porcentaje + "%"
+        );
+
+
+        console.log(
+            "Envío con total Bs 120:",
+            calcularEnvio(pedidos[0], 120)
+        );
+
+
+        console.log(
+            "Nivel con 30 puntos:",
+            calcularNivel(30)
+        );
+
+     </script> 
+</body> 
+</html>
