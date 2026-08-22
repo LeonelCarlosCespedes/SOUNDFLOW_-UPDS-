@@ -30,12 +30,19 @@ SOUNDFLOW_-UPDS-/
 │   └── styles.css
 ├── js/
 │   ├── app.js
-│   └── player.js
+│   └── validaciones.js
 ├── img/
 ├── assets/
 ├── .gitignore
 └── README.md
 ```
-## 📌 Estado
+## 📌 lo de hoy
+En esta clase hicimos verificacion de errores del codigo  
+ya tenemos un avance 50% 
+## lo que usamos hoy 
+- la API "https://api.deezer.com/search?q=synthwave"
+- solo nos falta hacer la prueba y conectar a una base de datos
+
+
 
 🚧 En desarrollo – Proyecto Integrador UPDS 2026
